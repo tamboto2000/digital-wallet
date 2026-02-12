@@ -46,7 +46,7 @@ digital-wallet/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/tamboto2000/digital-wallet
 cd digital-wallet
 ```
 
