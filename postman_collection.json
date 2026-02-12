@@ -1,0 +1,157 @@
+{
+	"info": {
+		"name": "Digital Wallet API",
+		"description": "API endpoints for digital wallet management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/health",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["health"]
+				}
+			}
+		},
+		{
+			"name": "Get Balance - User 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/balance/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "balance", "1"]
+				}
+			}
+		},
+		{
+			"name": "Get Balance - User 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/balance/2",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "balance", "2"]
+				}
+			}
+		},
+		{
+			"name": "Withdraw - Success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 100.50\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/withdraw/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "withdraw", "1"]
+				}
+			}
+		},
+		{
+			"name": "Withdraw - Insufficient Funds",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 10000.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/withdraw/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "withdraw", "1"]
+				}
+			}
+		},
+		{
+			"name": "Withdraw - Invalid Amount (Zero)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/withdraw/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "withdraw", "1"]
+				}
+			}
+		},
+		{
+			"name": "Withdraw - Invalid Amount (Negative)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": -50.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/withdraw/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "withdraw", "1"]
+				}
+			}
+		},
+		{
+			"name": "Get Balance - Wallet Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/balance/999",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "balance", "999"]
+				}
+			}
+		}
+	]
+}
